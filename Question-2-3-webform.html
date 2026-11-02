@@ -29,23 +29,42 @@
         <h1>Feedback form</h1>
     <form>
         <div class="control">
-          <label>Full name <span class="required">*</span></label><input id="name" name="name" type="text" />
+            
+            <!--Added for attribute to label to let user know what the label is associated with-->
+            <!--Added the required word to the label to let the user know that the field is required to be filled-->
+          <label for="name">Full name *Required<span class="required">*</span></label><input id="name" name="name" type="text" />
         </div>
         <div class="control">
-          <label>Biography</label><textarea id="biography" name="biography" type="text"></textarea>
-          <span>Include examples on your skills in JavaScript.</span>
+            
+        <!--Added for attribute to label to let user know what the label is associated with-->
+        <label id="bio_label" for="biography">Biography</label>
+        <span>
+            <textarea id="biography" name="biography" type="text" aria-labelledby="bio_label bio_instruc"></textarea>
+            <span id="bio_instruc">Include examples on your skills in JavaScript.</span>
+        <span>
         </div>
-        
-          <div>Gender</div>
+
+        <!--Created a fieldset to group the radio buttons and made the gender title into a legend for the fieldset-->
+        <fieldset>
+          <legend>Gender</legend>
+            
           <div class="control">
-            <input id="gender_male" name="gender" type="radio" value="male" /><label>Male</label>
+              
+            <!--Added for attribute to label to let user know what the label is associated with-->
+            <input id="gender_male" name="gender" type="radio" value="male" /><label for="gender_male">Male</label>
           </div>
+            
           <div class="control">
-            <input id="gender_female" name="gender" type="radio" value="female" /><label>Female</label>
+              
+              <!--Added for attribute to label to let user know what the label is associated with-->
+            <input id="gender_female" name="gender" type="radio" value="female" /><label for="gender_female">Female</label>
           </div>
+        </fieldset>
         
         <div class="control">
-          <input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" /><label>I accept the terms and conditions</label>
+            
+            <!--Added for attribute to label to let user know what the label is associated with-->
+          <input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" /><label for="accept_agbs">I accept the terms and conditions</label>
         </div>
         <div class="control">
           <input name="validate" type="hidden" value="1" /><input type="submit" value="Register" />
